@@ -1,0 +1,216 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/red_car.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Stopwatch.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/winding-key.png" type="Texture" id=4]
+
+[sub_resource type="CapsuleShape2D" id=7]
+radius = 8.68743
+height = 57.7618
+
+[sub_resource type="Animation" id=2]
+resource_name = "drive"
+length = 0.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("red_car/tire:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("red_car/tire2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+tracks/0/type = "value"
+tracks/0/path = NodePath("red_car:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("red_car:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("red_car/tire:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("red_car/tire2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "rewind"
+length = 1.1
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Winding_key:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "start_rewind"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Winding_key:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Winding_key:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.1, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -51, 0 ), Vector2( -40, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Winding_key:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Winding_key:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -40, 0 ), Vector2( -51, 0 ) ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+input_pickable = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 13.6964 ]
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+offset = Vector2( 60, 0 )
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Winding_key" type="Sprite" parent="."]
+position = Vector2( -40, 0 )
+texture = ExtResource( 4 )
+hframes = 12
+
+[node name="red_car" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+flip_h = true
+region_enabled = true
+region_rect = Rect2( 0, 0.011, 76.1177, 23 )
+
+[node name="tire" type="Sprite" parent="red_car"]
+position = Vector2( -16, 8.19644 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 77, 12, 11, 11 )
+
+[node name="tire2" type="Sprite" parent="red_car"]
+position = Vector2( 18.5832, 8.16864 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 77, 12, 11, 11 )
+
+[node name="Stopwatch" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( -10.5, -29.5192 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 5.00897 )
+rotation = 1.5708
+shape = SubResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/drive = SubResource( 2 )
+anims/idel = SubResource( 3 )
+anims/rewind = SubResource( 4 )
+anims/start_rewind = SubResource( 5 )
+anims/stop_rewind = SubResource( 6 )
+[connection signal="input_event" from="." to="." method="_on_Player_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
