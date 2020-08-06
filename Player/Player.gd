@@ -48,7 +48,8 @@ func _unhandled_input(event):
 			anim.stop(false)
 		
 	if event.is_action_pressed("get_started"):
-		get_started()
+		if state < DRIVING:
+			get_started()
 
 func _process(delta):
 	if state == REWINDING:
@@ -77,6 +78,8 @@ func get_started():
 	var seconds = stopwatch.seconds
 	if seconds > 0:
 		state = DRIVING
+		$Camera2D2.lockCamera = true
+		$Camera2D2.position = Vector2(90,-40)
 		anim.play("stop_rewind")
 		yield(anim, "animation_finished")
 		timer.wait_time = seconds

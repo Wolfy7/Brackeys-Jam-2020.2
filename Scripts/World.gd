@@ -3,28 +3,12 @@ extends Node2D
 
 onready var goal = $Goal
 onready var player = $Player
-onready var camera = $Camera2D
 
 var is_inGoal = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	camera.position = player.position
-	
-var _previousPosition: Vector2 = Vector2(0, 0);
-var _moveCamera: bool = false;
-
-func _unhandled_input(event: InputEvent):
-	if event is InputEventMouseButton && event.button_index == BUTTON_LEFT:
-		if event.is_pressed():
-			_previousPosition = event.position
-			_moveCamera = true
-		else:
-			_moveCamera = false
-	elif event is InputEventMouseMotion && _moveCamera:
-		camera.position += (_previousPosition - event.position)
-		_previousPosition = event.position
-
+	pass
 
 func _process(delta):
 	check_finish()

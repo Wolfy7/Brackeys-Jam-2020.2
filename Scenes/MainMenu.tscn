@@ -1,0 +1,357 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Ressourcen/bg_texture_tiles.tres" type="TileSet" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/RampUp.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Ressourcen/texture_tiles.tres" type="TileSet" id=4]
+[ext_resource path="res://Fonts/Centurion Bold 8x8 Monospaced.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Ressourcen/new_styleboxtexture.tres" type="StyleBox" id=6]
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=7]
+[ext_resource path="res://Ressourcen/label_14.tres" type="DynamicFont" id=8]
+[ext_resource path="res://Ressourcen/label_14_no_outline.tres" type="DynamicFont" id=9]
+[ext_resource path="res://Sprites/w7_logo_round.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 42
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 6
+extra_spacing_char = 4
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 4
+extra_spacing_bottom = 4
+extra_spacing_char = 2
+font_data = ExtResource( 5 )
+
+[sub_resource type="Theme" id=3]
+Button/colors/font_color = Color( 1, 1, 1, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.658824, 0.658824, 0.658824, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = SubResource( 2 )
+Button/styles/disabled = null
+Button/styles/focus = ExtResource( 6 )
+Button/styles/hover = ExtResource( 6 )
+Button/styles/normal = ExtResource( 6 )
+Button/styles/pressed = null
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=5]
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = -1.0
+margin_right = 2.0
+margin_bottom = -1.0
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 5, 1, 0, 5, 2, 0, 5, 3, 0, 5, 4, 0, 5, 5, 0, 5, 6, 0, 5, 7, 0, 5, 8, 0, 5, 9, 0, 5, 10, 0, 5, 11, 0, 5, 12, 0, 5, 13, 0, 5, 14, 0, 5, 15, 0, 5, 16, 0, 5, 17, 0, 5, 18, 0, 5, 19, 0, 5, 65536, 0, 5, 65555, 0, 5, 131072, 0, 5, 131091, 0, 5, 196608, 0, 5, 196627, 0, 5, 262144, 0, 5, 262163, 0, 5, 327680, 0, 5, 327699, 0, 5, 393216, 0, 5, 393235, 0, 5, 458752, 0, 5, 458771, 0, 5, 524288, 0, 5, 524307, 0, 5, 589824, 0, 5, 589843, 0, 5, 655360, 0, 5, 655379, 0, 5, 720896, 0, 5, 720897, 0, 5, 720898, 0, 5, 720899, 0, 5, 720900, 0, 5, 720901, 0, 5, 720902, 0, 5, 720903, 0, 5, 720904, 0, 5, 720905, 0, 5, 720906, 0, 5, 720907, 0, 5, 720908, 0, 5, 720909, 0, 5, 720910, 0, 5, 720911, 0, 5, 720912, 0, 5, 720913, 0, 5, 720914, 0, 5, 720915, 0, 5 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+modulate = Color( 1, 1, 1, 0.360784 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65537, 0, 3, 65538, 0, 3, 65539, 0, 3, 65540, 0, 3, 65541, 0, 3, 65542, 0, 3, 65543, 0, 3, 65544, 0, 3, 65545, 0, 3, 65546, 0, 3, 65547, 0, 3, 65548, 0, 3, 65549, 0, 3, 65550, 0, 3, 65551, 0, 3, 65552, 0, 3, 65553, 0, 3, 65554, 0, 3, 131073, 0, 3, 131074, 0, 3, 131075, 0, 3, 131076, 0, 3, 131077, 0, 3, 131078, 0, 3, 131079, 0, 3, 131080, 0, 3, 131081, 0, 3, 131082, 0, 3, 131083, 0, 3, 131084, 0, 3, 131085, 0, 3, 131086, 0, 3, 131087, 0, 3, 131088, 0, 3, 131089, 0, 3, 131090, 0, 3, 196609, 0, 3, 196610, 0, 3, 196611, 0, 3, 196612, 0, 3, 196613, 0, 3, 196614, 0, 3, 196615, 0, 3, 196616, 0, 3, 196617, 0, 3, 196618, 0, 3, 196619, 0, 3, 196620, 0, 3, 196621, 0, 3, 196622, 0, 3, 196623, 0, 3, 196624, 0, 3, 196625, 0, 3, 196626, 0, 3, 262145, 0, 3, 262146, 0, 3, 262147, 0, 3, 262148, 0, 3, 262149, 0, 3, 262150, 0, 3, 262151, 0, 3, 262152, 0, 3, 262153, 0, 3, 262154, 0, 3, 262155, 0, 3, 262156, 0, 3, 262157, 0, 3, 262158, 0, 3, 262159, 0, 3, 262160, 0, 3, 262161, 0, 3, 262162, 0, 3, 327681, 0, 3, 327682, 0, 3, 327683, 0, 3, 327684, 0, 3, 327685, 0, 3, 327686, 0, 3, 327687, 0, 3, 327688, 0, 3, 327689, 0, 3, 327690, 0, 3, 327691, 0, 3, 327692, 0, 3, 327693, 0, 3, 327694, 0, 3, 327695, 0, 3, 327696, 0, 3, 327697, 0, 3, 327698, 0, 3, 393217, 0, 3, 393218, 0, 3, 393219, 0, 3, 393220, 0, 3, 393221, 0, 3, 393222, 0, 3, 393223, 0, 3, 393224, 0, 3, 393225, 0, 3, 393226, 0, 3, 393227, 0, 3, 393228, 0, 3, 393229, 0, 3, 393230, 0, 3, 393231, 0, 3, 393232, 0, 3, 393233, 0, 3, 393234, 0, 3, 458753, 0, 3, 458754, 0, 3, 458755, 0, 3, 458756, 0, 3, 458757, 0, 3, 458758, 0, 3, 458759, 0, 3, 458760, 0, 3, 458761, 0, 3, 458762, 0, 3, 458763, 0, 3, 458764, 0, 3, 458765, 0, 3, 458766, 0, 3, 458767, 0, 3, 458768, 0, 3, 458769, 0, 3, 458770, 0, 3, 524289, 0, 3, 524290, 0, 3, 524291, 0, 3, 524292, 0, 3, 524293, 0, 3, 524294, 0, 3, 524295, 0, 3, 524296, 0, 3, 524297, 0, 3, 524298, 0, 3, 524299, 0, 3, 524300, 0, 3, 524301, 0, 3, 524302, 0, 3, 524303, 0, 3, 524304, 0, 3, 524305, 0, 3, 524306, 0, 3, 589825, 0, 3, 589826, 0, 3, 589827, 0, 3, 589828, 0, 3, 589829, 0, 3, 589830, 0, 3, 589831, 0, 3, 589832, 0, 3, 589833, 0, 3, 589834, 0, 3, 589835, 0, 3, 589836, 0, 3, 589837, 0, 3, 589838, 0, 3, 589839, 0, 3, 589840, 0, 3, 589841, 0, 3, 589842, 0, 3, 655361, 0, 3, 655362, 0, 3, 655363, 0, 3, 655364, 0, 3, 655365, 0, 3, 655366, 0, 3, 655367, 0, 3, 655368, 0, 3, 655369, 0, 3, 655370, 0, 3, 655371, 0, 3, 655372, 0, 3, 655373, 0, 3, 655374, 0, 3, 655375, 0, 3, 655376, 0, 3, 655377, 0, 3, 655378, 0, 3 )
+
+[node name="TitleScreen" type="Control" parent="."]
+anchor_top = 0.00263158
+anchor_right = 1.0
+anchor_bottom = 1.00263
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Player" parent="TitleScreen" instance=ExtResource( 2 )]
+position = Vector2( 233, 220 )
+rotation = -0.519498
+script = null
+
+[node name="RampUp" parent="TitleScreen" instance=ExtResource( 3 )]
+scale = Vector2( 2, 2 )
+
+[node name="Sprite" parent="TitleScreen/RampUp" index="0"]
+position = Vector2( 34, 159.5 )
+
+[node name="CollisionPolygon2D" parent="TitleScreen/RampUp" index="1"]
+visible = false
+
+[node name="Label" type="Label" parent="TitleScreen"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -273.0
+margin_top = 53.0
+margin_right = 273.0
+margin_bottom = 152.0
+custom_fonts/font = SubResource( 1 )
+text = "Wind-up
+Toy´s"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TitleScreen"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -15.0
+margin_top = 36.0
+margin_right = 239.0
+margin_bottom = 104.0
+custom_constants/separation = 20
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="TitleScreen/VBoxContainer"]
+margin_right = 254.0
+margin_bottom = 24.0
+theme = SubResource( 3 )
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsButton" type="Button" parent="TitleScreen/VBoxContainer"]
+margin_top = 44.0
+margin_right = 254.0
+margin_bottom = 68.0
+theme = SubResource( 3 )
+text = "Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreditsScreen" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="fb_logo" type="Sprite" parent="CreditsScreen"]
+modulate = Color( 1, 1, 1, 0.607843 )
+position = Vector2( 81, 306 )
+scale = Vector2( 0.436111, 0.416666 )
+texture = ExtResource( 10 )
+
+[node name="Label" type="Label" parent="CreditsScreen"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -272.5
+margin_top = 53.0
+margin_right = 272.5
+margin_bottom = 101.0
+custom_fonts/font = SubResource( 1 )
+text = "Credits"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackButton" type="Button" parent="CreditsScreen"]
+margin_left = 476.0
+margin_top = 317.0
+margin_right = 596.0
+margin_bottom = 341.0
+theme = SubResource( 3 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer" type="CenterContainer" parent="CreditsScreen"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 43.0
+margin_top = 111.0
+margin_right = -42.0
+margin_bottom = -69.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsScreen/CenterContainer"]
+process_priority = 9
+margin_left = 33.0
+margin_top = 6.0
+margin_right = 521.0
+margin_bottom = 194.0
+custom_constants/separation = 14
+alignment = 1
+
+[node name="Label2" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer"]
+margin_right = 488.0
+margin_bottom = 20.0
+custom_fonts/font = SubResource( 4 )
+text = "Brackeys Jam 2020.2"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CreditsScreen/CenterContainer/VBoxContainer"]
+margin_top = 34.0
+margin_right = 488.0
+margin_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_constants/separation = 40
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_right = 195.0
+margin_bottom = 124.0
+custom_constants/separation = 8
+
+[node name="Label" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_right = 195.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Programmer:"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 22.0
+margin_right = 195.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 9 )
+text = "Wolfy7"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 44.0
+margin_right = 195.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 8 )
+text = "Music and SFX:"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 66.0
+margin_right = 195.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 9 )
+text = "Wolfy7"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 88.0
+margin_right = 195.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 8 )
+text = "Art:"
+align = 1
+valign = 1
+
+[node name="Label6" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+margin_top = 110.0
+margin_right = 195.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 9 )
+text = "Wolfy7"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer"]
+margin_left = 235.0
+margin_right = 488.0
+margin_bottom = 124.0
+custom_constants/separation = 8
+
+[node name="Label" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_right = 253.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 8 )
+text = "Engine:"
+align = 1
+valign = 1
+
+[node name="Label2" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 22.0
+margin_right = 253.0
+margin_bottom = 36.0
+custom_fonts/font = ExtResource( 9 )
+text = "Godot"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 44.0
+margin_right = 253.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 8 )
+text = "Music and SFX:"
+align = 1
+valign = 1
+
+[node name="Label4" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 66.0
+margin_right = 253.0
+margin_bottom = 80.0
+custom_fonts/font = ExtResource( 9 )
+text = "Audacity / Beepbox"
+align = 1
+valign = 1
+
+[node name="Label5" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 88.0
+margin_right = 253.0
+margin_bottom = 102.0
+custom_fonts/font = ExtResource( 8 )
+text = "Art:"
+align = 1
+valign = 1
+
+[node name="Label6" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer/HBoxContainer/VBoxContainer2"]
+margin_top = 110.0
+margin_right = 253.0
+margin_bottom = 124.0
+custom_fonts/font = ExtResource( 9 )
+text = "Aseprite"
+align = 1
+valign = 1
+
+[node name="Label" type="Label" parent="CreditsScreen/CenterContainer/VBoxContainer"]
+margin_top = 172.0
+margin_right = 488.0
+margin_bottom = 188.0
+custom_fonts/font = SubResource( 5 )
+text = "Thanks for playing!"
+align = 1
+valign = 1
+[connection signal="pressed" from="TitleScreen/VBoxContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="TitleScreen/VBoxContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="CreditsScreen/BackButton" to="." method="_on_BackButton_pressed"]
+
+[editable path="TitleScreen/RampUp"]
