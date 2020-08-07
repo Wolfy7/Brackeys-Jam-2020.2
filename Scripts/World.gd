@@ -1,8 +1,17 @@
 extends Node2D
 
-
 onready var goal = $Goal
 onready var player = $Player
+
+enum Tutorial{
+	STEP1,
+	STEP2,
+	STEP3,
+	STEP4,
+	STEP5
+}
+
+var state = Tutorial.STEP1
 
 var is_inGoal = false
 

@@ -45,7 +45,7 @@ func _unhandled_input(event):
 			#yield(anim, "animation_finished")
 			stopwatch.visible = false
 			#key.visible = false
-			anim.stop(false)
+			anim.stop(true)
 		
 	if event.is_action_pressed("get_started"):
 		if state < DRIVING:
@@ -59,6 +59,10 @@ func _process(delta):
 		state = STOPPED
 		velocity.x = 0
 		anim.play("idel")
+	
+	#TODO	
+	if stopwatch.is_full() and state >= DRIVING:
+		anim.stop(true)
 
 func _physics_process(delta):
 	velocity.y += delta * GRAVITY
